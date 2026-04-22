@@ -1,2 +1,3 @@
 # Ignore Python virtual environment for size reduction
 .venv/
+game_state.jsonl
