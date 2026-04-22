@@ -1,3 +1,6 @@
-# Ignore Python virtual environment for size reduction
+# folders
 .venv/
+__pycache__/
+
 game_state.jsonl
+
