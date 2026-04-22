@@ -4,13 +4,13 @@ from logger import log_state, log_event
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from shot import Shot
 
 def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
     dt = 0
-    
 
     # Outputting version and screen settings
     print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
@@ -21,11 +21,13 @@ def main():
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
 
     # Attributing containers to our classes
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
     Player.containers = (updatable,drawable)
+    Shot.containers = (shots, updatable, drawable)
 
     # Instantiating objects of our classes
     asteroid_field = AsteroidField()
